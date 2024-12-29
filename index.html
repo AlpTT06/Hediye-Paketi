@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hediye Paketi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1549834123-2e72c755a145?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .gift-box {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .gift-box img {
+            width: 50vw;
+            height: auto;
+            transition: transform 0.5s ease-in-out;
+            border: 5px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: url('https://cdn.pixabay.com/photo/2016/11/19/17/50/christmas-1848203_960_720.png') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        .gift-box.open img {
+            transform: scale(0.5) rotateX(180deg);
+        }
+
+        .message {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            font-size: 14px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 65%;
+            max-width: 450px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        .message.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gift-box" id="giftBox" onclick="openGift()">
+        <img src="https://www.thecustompackaging.com/wp-content/uploads/2018/09/Gift-Boxes01-3.jpg" alt="Hediye Paketi">
+        <div class="message" id="message">
+            <pre>
+DENİZ VE SEN
+
+Ben garip bir denizciyim bu sularda.
+Dinlerim gece gündüz koyu lacivert rengi.
+Deniz fısıldar karanlık geceye usulca,
+Siyah bir örtüye saklanır aşk sözcükleri.
+Dalgaların koynundan sen doğarsın.
+Artık her köpükte bir parça sen varsın.
+Ay ışığı değdiğinde tuzlu suya,
+Senin yakamoz bakışların gelir aklıma,
+Gözlerin gibi delici ve serin.
+Bir sevda büyür içimde, engin ve derin...
+Senin adını yazar rüzgar dalgalara,
+Şairin kaleminden dizeler dökülür,
+Dokunduğun yerde can filizlenir,
+Deniz de seni sever,
+Hem de ben gibi sever.
+Adın bir yelkenliye verilmişse eğer,
+Kalbim, o zarif kuğunun iskotasındadır.
+Seninle dolup taşar her dalga, her serpinti.
+Deniz demek sen, sen demek denizdir.
+Ah! Sevilen kadın, denizin soluğu gibisin.
+Sonsuza uzanan, vazgeçilmez bir rüyasın.
+Sen ve deniz, aynı şiirin mısralarındasın.
+Dalgalarda kaybolsam, yalpalarla avunurum.
+Gözlerinde kendimi ve denizi görür,
+O derinlikte aşkı tekrar tekrar yaşarım.
+Rotam ne olursa olsun,
+Varacağım yerde daima sen olursun.
+Hedefte, kalbimdeki sen varsan eğer,
+Haykırırım denizlere tüm gücümle.
+Tam yol ileri. Viya böyle!
+
+Tanzar Dinçer
+28 Aralık 2024
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+            var giftBox = document.getElementById('giftBox');
+            var message = document.getElementById('message');
+            giftBox.classList.add('open');
+            message.classList.add('show');
+        }
+    </script>
+
+</body>
+</html>
